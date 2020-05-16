@@ -6,4 +6,4 @@ Changelog
 
 - Add: Live Codesandbox link
 - Add: logos: React, Vue
-- Add: CHANGELOG.md
+- Add: CHANGELOG.md, DEV.md

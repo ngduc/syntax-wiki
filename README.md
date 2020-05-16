@@ -19,6 +19,8 @@ $ yarn build      Build project to ./dist
 $ yarn web        Publish to zeit now (vercel)
 ```
 
+See: [DEV.md](DEV.md)
+
 ### ✋ Contributions
 
 Please open a Pull Request. Any contribution is welcome!
