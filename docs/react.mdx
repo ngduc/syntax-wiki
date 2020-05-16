@@ -2,6 +2,8 @@ export { Root } from './components'
 
 [Home](/) | React - _Latest React Syntax - Updated: May 2020 at [Github](https://github.com/ngduc/syntax.codes)_
 
+_React v16.13.1 - released on Mar 19, 2020_
+
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png" height="48" />
 
 ## React in Typescript
@@ -9,13 +11,19 @@ export { Root } from './components'
 ### Functional Component
 
 ```.jsx
-interface Props {
-  value: number
+export interface Props {
+  defaultCount: number
 }
-function MyComponent({ value = 123 }: Props): React.Node {
-  const [text, setText] = React.useState<string>('Example');
-  
-  return <div>Syntax {value} {text}</div> 
+export interface State {
+  count: number
+}
+export default function MyComponent({ defaultCount = 0 }: Props): React.ReactNode {
+  const [count, setCount] = React.useState(defaultCount)
+
+  const incrementCount = () => {
+    setCount(count + 1)
+  }
+  return <button onClick={incrementCount}>Example - count: {count}</button>
 }
 ```
 
@@ -44,8 +52,9 @@ class MyComponent extends React.Component<Props, State> {
 ```
 
 ##### References:
-- https://github.com/typescript-cheatsheets/react-typescript-cheatsheet
-- https://github.com/microsoft/TypeScript-React-Starter
+- [Live Codesandbox](https://codesandbox.io/s/react-typescript-estfk?file=/src/MyCounter.tsx)
+- [React Typescript Cheatsheet](https://github.com/typescript-cheatsheets/react-typescript-cheatsheet)
+- [Typescript React Starter](https://github.com/microsoft/TypeScript-React-Starter)
 
 #
 ---------------
