@@ -1,69 +1,19 @@
 export { Root } from './components'
 
-_Latest React Syntax - Updated: May 2020 at [Github](https://github.com/ngduc/syntax.codes)_
+## Syntax.codes
 
-## React in Typescript
+Syntax.codes aims to provide the latest code syntax (best practices or recommended from communites) of frameworks and programming languages.
 
-### Functional Component
+[Github Repository](https://github.com/ngduc/syntax.codes)
 
-```.jsx
-interface Props {
-  value: number
-}
-function MyComponent({ value = 123 }: Props): React.Node {
-  const [text, setText] = React.useState<string>('Example');
-  
-  return <div>Syntax {value} {text}</div> 
-}
-```
+## React
 
-### Functional Component - Arrow syntax
+[<img src="https://www.iconspng.com/uploads/react-logo-icon.png" height="48" />](/react)
 
-```.jsx
-const MyComponent: React.FC<Props> = ({ value }) => <div>Syntax</div>
-```
+[React Syntax](/react)
 
-### Class
+## Vue
 
-```.jsx
-interface Props {
-  value: number
-}
-interface State {
-  text: string
-}
-class MyComponent extends React.Component<Props, State> {
-  state: State = { text: 'Example' }
+[<img src="https://www.iconspng.com/uploads/vue-js-logo.png" height="48" />](/vue)
 
-  render() {
-    return <div>Syntax {this.props.value} {this.state.text}</div>
-  }
-}
-```
-
-#
----------------
-
-## React in Javascript
-
-### Functional Component
-
-```.jsx
-function MyComponent(props) {
-  const [text, setText] = React.useState('Example')
-
-  return <div>Syntax {props.value} {text}</div> 
-}
-```
-
-### Class
-
-```.jsx
-class MyComponent extends React.Component {
-  state = { text: 'Example' }
-
-  render() {
-    return <div>Syntax {this.props.value} {this.state.text}</div>
-  }
-}
-```
+[Vue Syntax](/vue)
