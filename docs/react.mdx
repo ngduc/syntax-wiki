@@ -14,11 +14,8 @@ _React v16.13.1 - released on Mar 19, 2020_
 export interface Props {
   defaultCount: number
 }
-export interface State {
-  count: number
-}
-export default function MyComponent({ defaultCount = 0 }: Props): React.ReactNode {
-  const [count, setCount] = React.useState(defaultCount)
+export default function MyCounter({ defaultCount = 0 }: Props): React.ReactElement {
+  const [count, setCount] = React.useState<number>(defaultCount)
 
   const incrementCount = () => {
     setCount(count + 1)
