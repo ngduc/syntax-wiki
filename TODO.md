@@ -11,6 +11,7 @@ TODO.md Task Board
 
 ### In Progress
 
+- [ ] Syntax highlighting for other langs  
 - [ ] Add Vue page  
 
 ### Done ✓
