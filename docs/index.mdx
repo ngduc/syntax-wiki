@@ -1,0 +1,69 @@
+export { Root } from './components'
+
+_Latest React Syntax - Updated: May 2020 at [Github](https://github.com/ngduc/syntax.codes)_
+
+## React in Typescript
+
+### Functional Component
+
+```.jsx
+interface Props {
+  value: number
+}
+function MyComponent({ value = 123 }: Props): React.Node {
+  const [text, setText] = React.useState<string>('Example');
+  
+  return <div>Syntax {value} {text}</div> 
+}
+```
+
+### Functional Component - Arrow syntax
+
+```.jsx
+const MyComponent: React.FC<Props> = ({ value }) => <div>Syntax</div>
+```
+
+### Class
+
+```.jsx
+interface Props {
+  value: number
+}
+interface State {
+  text: string
+}
+class MyComponent extends React.Component<Props, State> {
+  state: State = { text: 'Example' }
+
+  render() {
+    return <div>Syntax {this.props.value} {this.state.text}</div>
+  }
+}
+```
+
+#
+---------------
+
+## React in Javascript
+
+### Functional Component
+
+```.jsx
+function MyComponent(props) {
+  const [text, setText] = React.useState('Example')
+
+  return <div>Syntax {props.value} {text}</div> 
+}
+```
+
+### Class
+
+```.jsx
+class MyComponent extends React.Component {
+  state = { text: 'Example' }
+
+  render() {
+    return <div>Syntax {this.props.value} {this.state.text}</div>
+  }
+}
+```
