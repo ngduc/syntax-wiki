@@ -3,7 +3,9 @@
 
 Source code for [syntax.codes website](https://syntax.codes)
 
-Syntax.codes aims to provide the latest code syntax (best practices or recommended from communites) of frameworks and programming languages.
+Syntax.codes aims to provide the latest code syntax (best practices or recommended from communities) of frameworks and programming languages.
+
+> Engineers who are new to a Framework or Language often got confused about different syntax when reading through many tutorials and documents on the Internet. I hope this helps to clarify the recommended way to write the latest code syntax.
 
 ### 👨‍💻 Technologies
 
