@@ -15,7 +15,7 @@ const code = (props) => {
   if (!isLive) {
     // return <pre {...props} className={`${props.className} language-markup`} />;
     return (
-      <Highlight {...defaultProps} code={code} language="html">
+      <Highlight {...defaultProps} code={code} language="tsx">
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <pre className={className} style={style}>
             {tokens.map((line, i) => (

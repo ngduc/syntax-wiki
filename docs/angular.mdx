@@ -1,0 +1,45 @@
+export { Root } from './components'
+
+[Home](/) | Angular - _Latest Syntax - Updated: May 2020 at [Github](https://github.com/ngduc/syntax.codes)_
+
+_Angular 9.1 - released on May, 2020_
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/80px-Angular_full_color_logo.svg.png" height="48" />
+
+## Angular 9.1
+
+### Angular Component with Typescript
+
+```.js
+import { Component, OnInit } from '@angular/core';
+interface Item {
+  id: number;
+}
+
+@Component({
+  selector: 'app-root',
+  template: `
+    <ul>
+      <li *ngFor="let item of collection; trackBy: trackByFn">Item {{ item.id }}</li>
+    </ul>
+    <button (click)="fetchItems()">Fetch items</button>
+  `,
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent implements OnInit {
+  collection: Item[] = [{ id: 1 }, { id: 2 }];
+
+  ngOnInit(): void {}
+
+  fetchItems(): void {
+    this.collection = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }];
+  }
+
+  trackByFn(index: number, item: Item) {
+    return item.id;
+  }
+}
+```
+
+##### References:
+- [Live Codesandbox](https://codesandbox.io/s/angular-9-example-cr1nd?file=/src/app/app.component.ts)

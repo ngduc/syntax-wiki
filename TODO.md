@@ -6,13 +6,13 @@ TODO.md Task Board
 
 ### Todo
 
-- [ ] Add: Angular page  
 - [ ] Add: Python page  
 
 ### In Progress
 
 - [ ] Syntax highlighting for other langs  
 - [ ] Add: Vue page  
+- [ ] Add: Angular page  
 
 ### Done ✓
 
