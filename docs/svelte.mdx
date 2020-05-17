@@ -1,0 +1,44 @@
+export { Root } from './components'
+
+[Home](/) | Svelte - _Latest Syntax - Updated: May 2020 at [Github](https://github.com/ngduc/syntax.codes)_
+
+_Svelte 3.22 - released on May, 2020_
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Svelte_Logo.svg/80px-Svelte_Logo.svg.png" height="48" />
+
+## Svelte 3.22
+
+### Svelte component
+
+```.js
+<script>
+  let items = [];
+  function addItem() {
+    const newItem = Math.round(Math.random() * 100);
+    items = [...items, newItem];
+  }
+</script>
+
+<style>
+  h2 {
+    color: darkblue;
+  }
+</style>
+
+<div>
+	<h2>Array Demo</h2>
+	<button on:click={addItem}>Add Item</button>
+
+  {#if items.length > 0}
+    <h3>List items:</h3>
+    <ul>
+      {#each items as val, idx}
+        <li>{val}</li>
+      {/each}
+    </ul>
+  {/if}
+</div>
+```
+
+##### References:
+- [Live Codesandbox](https://codesandbox.io/s/svelte-3-2jxgr?file=/App.svelte)

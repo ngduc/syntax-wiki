@@ -11,6 +11,19 @@ ul, li {
   padding: 0;
 }
 
+ul#mainList {
+  list-style: none;
+  margin: 10px 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+ul#mainList li {
+  width: 30%;
+  margin-right: 20px;
+}
+
 a {
   text-decoration: none;
 }
@@ -39,8 +52,8 @@ pre[class="language-.js"] {
 img#home_logo {
   border: 1px solid #ccc;
   border-radius: 5%;
-  width: 10%;
-  height: 10%;
+  width: 150px;
+  height: 150px;
   padding: 20px;
   box-shadow: 3px 3px 3px #eee;
 }
@@ -51,8 +64,8 @@ img#home_logo:hover {
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
   img#home_logo {
-    width: 40%;
-    height: 40%;
+    width: 100px;
+    height: 100px;
   }
 }
 
