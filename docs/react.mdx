@@ -40,16 +40,15 @@ interface State {
   text: string
 }
 class MyComponent extends React.Component<Props, State> {
+  static defaultProps: Props = {
+    value: 0
+  }
   state: State = { text: 'Example' }
 
   render() {
     return <div>Syntax {this.props.value} {this.state.text}</div>
   }
 }
-
-MyComponent.defaultProps = {
-  value: 0
-};
 ```
 
 ##### References:
@@ -70,6 +69,9 @@ function MyComponent(props) {
 
   return <div>Syntax {props.value} {text}</div> 
 }
+
+// arrow syntax
+const MyComponent2 = (props) => <div>Syntax {props.value}</div>
 ```
 
 ### Class
