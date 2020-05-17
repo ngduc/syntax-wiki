@@ -1,7 +1,7 @@
 {
   "name": "syntax.codes",
   "description": "Source code for http://syntax.codes",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -16,9 +16,12 @@
   "dependencies": {
     "@babel/preset-typescript": "^7.9.0",
     "babel-plugin-add-react-displayname": "^0.0.5",
+    "css-loader": "^3.5.3",
     "html-webpack-plugin": "^4.3.0",
     "logrocket": "^1.0.7",
     "mdx-go": "^2.0.0-32",
-    "react-view": "^2.3.2"
+    "prism-react-renderer": "^1.1.0",
+    "react-view": "^2.3.2",
+    "style-loader": "^1.2.1"
   }
 }

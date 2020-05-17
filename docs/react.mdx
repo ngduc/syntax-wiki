@@ -15,10 +15,10 @@ export interface Props {
   defaultCount: number
 }
 export default function MyCounter({ defaultCount = 0 }: Props): React.ReactElement {
-  const [count, setCount] = React.useState<number>(defaultCount)
+  const [count, setCount] = React.useState<number>(defaultCount);
 
   const incrementCount = () => {
-    setCount(count + 1)
+    setCount(count + 1);
   }
   return <button onClick={incrementCount}>Example - count: {count}</button>
 }
@@ -46,6 +46,10 @@ class MyComponent extends React.Component<Props, State> {
     return <div>Syntax {this.props.value} {this.state.text}</div>
   }
 }
+
+MyComponent.defaultProps = {
+  value: 0
+};
 ```
 
 ##### References:
@@ -62,7 +66,7 @@ class MyComponent extends React.Component<Props, State> {
 
 ```.jsx
 function MyComponent(props) {
-  const [text, setText] = React.useState('Example')
+  const [text, setText] = React.useState('Example');
 
   return <div>Syntax {props.value} {text}</div> 
 }

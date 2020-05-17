@@ -31,6 +31,11 @@ pre[class="language-.js"] {
   padding: 8px;
 }
 
+.prism-code {
+  text-align: left !important;
+  padding: 8px;
+}
+
 img#home_logo {
   border: 1px solid #ccc;
   border-radius: 5%;
