@@ -6,15 +6,17 @@ TODO.md Task Board
 
 ### Todo
 
+- [ ] Add: Svelte page  
 - [ ] Add: Python page  
 
 ### In Progress
 
 - [ ] Syntax highlighting for other langs  
-- [ ] Add: Vue page  
-- [ ] Add: Angular page  
+- [ ] Add: Edit link to start a Github PR  
 
 ### Done ✓
 
+- [x] Add: Vue page  
+- [x] Add: Angular page  
 - [x] Add: Live Codesandbox link  
 - [x] Add: React page  
