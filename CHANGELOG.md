@@ -2,8 +2,9 @@
 
 Changelog
 
-## [0.0.7] - 2020-05-16
+## [0.0.8] - 2020-05-16
 
+- Add: links for releases, changelog
 - Add: Angular, Vue, Svelte pages
 - Add: prism-react-renderer
 - Add: Live Codesandbox link

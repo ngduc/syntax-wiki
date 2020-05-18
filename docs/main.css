@@ -1,8 +1,12 @@
 body {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Georgia, Times, 'Times New Roman', serif;
   text-align: center;
   margin: 0 auto;
   max-width: 960px;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 ul, li {
@@ -26,6 +30,21 @@ ul#mainList li {
 
 a {
   text-decoration: none;
+}
+
+.tagButton {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 2px 5px;
+  margin: 0 5px;
+  background-color: rgba(240, 240, 240, 0.5);
+  font-family: monospace;
+  font-size: 0.95em;
+  cursor: pointer;
+}
+.tagButton:hover {
+  background-color: rgba(240, 240, 240, 1);
+  color: darkblue;
 }
 
 pre > div:nth-child(1) > div {
@@ -199,3 +218,4 @@ img#home_logo:hover {
  .token.italic {
    font-style: italic;
  }
+
