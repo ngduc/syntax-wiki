@@ -22,10 +22,19 @@ ul#mainList {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 ul#mainList li {
-  width: 30%;
+  width: 25%;
   margin-right: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5%;
+  box-shadow: 3px 3px 3px #eee;
+  margin: 2% 3%;
+}
+ul#mainList li:hover {
+  box-shadow: 1px 1px 1px #aaa;
+  background-color: rgba(240, 240, 240, 0.5);
 }
 
 a {
@@ -69,19 +78,17 @@ pre[class="language-.js"] {
 }
 
 img#home_logo {
-  border: 1px solid #ccc;
-  border-radius: 5%;
-  width: 150px;
   height: 150px;
   padding: 20px;
-  box-shadow: 3px 3px 3px #eee;
-}
-img#home_logo:hover {
-  box-shadow: 1px 1px 1px #aaa;
 }
 
 @media only screen and (max-width: 768px) {
-  /* For mobile phones: */
+  ul#mainList li {
+    width: 40%;
+  }
+  ul#mainList h2, h3, p {
+    margin: 10px;
+  }
   img#home_logo {
     width: 100px;
     height: 100px;

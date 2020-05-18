@@ -26,14 +26,14 @@ _Svelte - May, 2020_ <a class="tagButton" href="https://github.com/sveltejs/svel
 </style>
 
 <div>
-	<h2>Array Demo</h2>
-	<button on:click={addItem}>Add Item</button>
+  <h2>Array Demo</h2>
+  <button on:click={addItem}>Add Item</button>
 
   {#if items.length > 0}
     <h3>List items:</h3>
     <ul>
-      {#each items as val, idx}
-        <li>{val}</li>
+      {#each items as value, idx}
+        <li>{value}</li>
       {/each}
     </ul>
   {/if}
@@ -42,3 +42,4 @@ _Svelte - May, 2020_ <a class="tagButton" href="https://github.com/sveltejs/svel
 
 #### References:
 - [Live Codesandbox](https://codesandbox.io/s/svelte-3-2jxgr?file=/App.svelte)
+- [Svelte Docs](https://svelte.dev/docs)

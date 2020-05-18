@@ -12,7 +12,7 @@ _Vue - May, 2020_ <a class="tagButton" href="https://github.com/vuejs/vue-next/r
 
 ```.js
 <template>
-  <button @click="increment">
+  <button @click="onClick">
     Count is: {{ count }}, double is: {{ double }}, click to increase it.
   </button>
 </template>
@@ -25,7 +25,7 @@ _Vue - May, 2020_ <a class="tagButton" href="https://github.com/vuejs/vue-next/r
       onMounted(() => console.log('component mounted!'))
 
       const count = ref(0)
-      const increment = () => {
+      const onClick = () => {
         count.value++
       }
       const double = computed(() => count.value * 2)
@@ -33,7 +33,7 @@ _Vue - May, 2020_ <a class="tagButton" href="https://github.com/vuejs/vue-next/r
       return {
         count,
         double,
-        increment
+        onClick
       }
     }
   }

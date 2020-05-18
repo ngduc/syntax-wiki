@@ -17,10 +17,10 @@ export interface Props {
 export default function MyCounter({ defaultCount = 0 }: Props): React.ReactElement {
   const [count, setCount] = React.useState<number>(defaultCount);
 
-  const incrementCount = () => {
+  const onClick = () => {
     setCount(count + 1);
   }
-  return <button onClick={incrementCount}>Example - count: {count}</button>
+  return <button onClick={onClick}>Example - count: {count}</button>
 }
 ```
 
@@ -71,13 +71,16 @@ function MyComponent(props) {
 }
 
 // arrow syntax
-const MyComponent2 = (props) => <div>Syntax {props.value}</div>
+const AnotherComponent = (props) => <div>Syntax {props.value}</div>
 ```
 
 ### Class
 
 ```.jsx
 class MyComponent extends React.Component {
+  static defaultProps = {
+    value: 0
+  }
   state = { text: 'Example' }
 
   render() {
