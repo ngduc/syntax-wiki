@@ -1,4 +1,4 @@
-# 🌎 www.syntax.codes
+# 🌎 www.syntax.wiki
 
 TODO.md Task Board
 

@@ -53,7 +53,7 @@ const components = {
 export const Root = (props) => (
   <ComponentProvider components={components}>
     <Head>
-      <title>React Syntax</title>
+      <title>Syntax.wiki</title>
     </Head>
     <div style={{ padding: 10 }}>{props.children}</div>
   </ComponentProvider>

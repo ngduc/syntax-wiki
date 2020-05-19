@@ -1,7 +1,7 @@
 {
   "name": "syntax.codes",
   "description": "Source code for http://syntax.codes",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -11,7 +11,7 @@
     "start": "mdx-go docs",
     "cp-files": "cp docs/main.css dist/main.css",
     "build": "rm -rf dist && mdx-go build docs && npm run cp-files",
-    "web": "cd ./dist && echo '{ \"version\": 2, \"alias\": [\"www.syntax.codes\", \"syntax.codes\"] }' > now.json && now && now alias && cd .."
+    "web": "./tools/publish.sh"
   },
   "dependencies": {
     "@babel/preset-typescript": "^7.9.0",
