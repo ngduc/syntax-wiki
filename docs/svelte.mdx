@@ -11,11 +11,23 @@ _Svelte - May, 2020_ <a class="tagButton" href="https://github.com/sveltejs/svel
 ### Svelte component
 
 ```.js
+<div>
+	<h2>Array Demo</h2>
+
+	{#if items.length > 0}
+	<ul>
+		{#each items as item, index}
+		<li>{item.title}</li>
+		{/each}
+	</ul>
+	{/if}
+	<button on:click={fetchMore}>Fetch More</button>
+</div>
+
 <script>
-  let items = [];
-  function addItem() {
-    const newItem = Math.round(Math.random() * 100);
-    items = [...items, newItem];
+  let items = [{ title: "Item 1" }, { title: "Item 2" }];
+  function fetchMore() {
+    items = [...items, { title: "Fetched item" }];
   }
 </script>
 
@@ -24,22 +36,8 @@ _Svelte - May, 2020_ <a class="tagButton" href="https://github.com/sveltejs/svel
     color: darkblue;
   }
 </style>
-
-<div>
-  <h2>Array Demo</h2>
-  <button on:click={addItem}>Add Item</button>
-
-  {#if items.length > 0}
-    <h3>List items:</h3>
-    <ul>
-      {#each items as value, idx}
-        <li>{value}</li>
-      {/each}
-    </ul>
-  {/if}
-</div>
 ```
 
 #### References:
-- [Live Codesandbox](https://codesandbox.io/s/svelte-3-2jxgr?file=/App.svelte)
+- [Run this in Codesandbox](https://codesandbox.io/s/svelte-3-2jxgr?file=/App.svelte)
 - [Svelte Docs](https://svelte.dev/docs)

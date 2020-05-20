@@ -11,38 +11,39 @@ _Angular - May, 2020_ <a class="tagButton" href="https://github.com/angular/angu
 ### Angular Component with Typescript
 
 ```.js
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 interface Item {
-  id: number;
+  title: string;
+  done?: boolean;
 }
-
 @Component({
   selector: 'app-root',
   template: `
-    <ul>
-      <li *ngFor="let item of collection; trackBy: trackByFn">Item {{ item.id }}</li>
+    <ul *ngIf="items.length > 0">
+      <li *ngFor="let item of items; trackBy: trackByFn">{{ item.title }}</li>
     </ul>
-    <button (click)="fetchItems()">Fetch items</button>
+    <button (click)="fetchMore()">Fetch More</button>
   `,
-  // templateUrl: './MyComponent.html', // or use template file
+  // templateUrl: './app.component.html', // for template file
   styleUrls: ['./app.component.css']
 })
-export class MyComponent implements OnInit, OnDestroy {
-  collection: Item[] = [{ id: 1 }, { id: 2 }];
+export class AppComponent implements OnInit, OnDestroy {
+  @Input(100) maxItems: number;
+  items: Item[] = [{ title: 'Item 1' }, { title: 'Item 2' }];
 
   ngOnInit(): void {}
   ngOnDestroy(): void {}
 
-  fetchItems(): void {
-    this.collection = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }];
+  fetchMore(): void {
+    this.items = [...this.items, { title: 'Fetched Item' }];
   }
 
   trackByFn(index: number, item: Item) {
-    return item.id;
+    return index; // or: item.id
   }
 }
 ```
 
 #### References:
-- [Live Codesandbox](https://codesandbox.io/s/angular-9-example-cr1nd?file=/src/app/app.component.ts)
+- [Run this in Codesandbox](https://codesandbox.io/s/angular-9-example-cr1nd?file=/src/app/app.component.ts)
 - [Livecycle Hooks APIs](https://angular.io/guide/lifecycle-hooks)

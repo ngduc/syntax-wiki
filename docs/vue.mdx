@@ -12,36 +12,35 @@ _Vue - May, 2020_ <a class="tagButton" href="https://github.com/vuejs/vue-next/r
 
 ```.js
 <template>
-  <button @click="onClick">
-    Count is: {{ count }}, double is: {{ double }}, click to increase it.
-  </button>
+  <v-fragment>
+    <ul v-if="items.length > 0">
+      <li v-for="(item, index) in items" :key="index">{{ item.title }}</li>
+    </ul>
+    <button v-on:click="fetchMore">Fetch More</button>
+  </v-fragment>
 </template>
 
 <script>
-  import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted } from "vue";
 
-  export default {
-    setup() {
-      onMounted(() => console.log('component mounted!'))
-
-      const count = ref(0)
-      const onClick = () => {
-        count.value++
-      }
-      const double = computed(() => count.value * 2)
-
-      return {
-        count,
-        double,
-        onClick
-      }
-    }
+export default {
+  setup() {
+    onMounted(() => console.log("component mounted!"));
+    const items = ref([{ title: "Item 1" }, { title: "Item 2" }]);
+    const fetchMore = () => {
+      items.value = [...items.value, { title: "Fetched item" }];
+    };
+    return {
+      items,
+      fetchMore
+    };
   }
+};
 </script>
 
-<style scoped>button {}</style>
+<style scoped></style>
 ```
 
 #### References:
-- [Live Codesandbox](https://codesandbox.io/s/vue-3-8qy7f?file=/src/App.vue)
+- [Run this in Codesandbox](https://codesandbox.io/s/vue-3-8qy7f?file=/src/App.vue)
 - [VueJS API](https://composition-api.vuejs.org/api.html)

@@ -11,16 +11,33 @@ _React - Mar 19, 2020_ <a class="tagButton" href="https://github.com/facebook/re
 ### Functional Component
 
 ```.jsx
-export interface Props {
-  defaultCount: number
-}
-export default function MyCounter({ defaultCount = 0 }: Props): React.ReactElement {
-  const [count, setCount] = React.useState<number>(defaultCount);
+import * as React from 'react'
 
-  const onClick = () => {
-    setCount(count + 1);
+export interface Item {
+  title: string
+  done?: boolean
+}
+export interface Props {
+  initialItems?: Item[]
+}
+export default function TodoList({ initialItems = [] }: Props): React.ReactElement {
+  const [items, setItems] = React.useState<Item[]>(initialItems)
+
+  const fetchMore = () => {
+    setItems([...items, { title: 'Fetched item' }])
   }
-  return <button onClick={onClick}>Example - count: {count}</button>
+  return (
+    <>
+      {items.length > 0 && (
+        <ul>
+          {items.map((item) => (
+            <li>{item.title}</li>
+          ))}
+        </ul>
+      )}
+      <button onClick={fetchMore}>Fetch More</button>
+    </>
+  )
 }
 ```
 
@@ -52,7 +69,7 @@ class MyComponent extends React.Component<Props, State> {
 ```
 
 #### References:
-- [Live Codesandbox](https://codesandbox.io/s/react-typescript-estfk?file=/src/MyCounter.tsx)
+- [Run this in Codesandbox](https://codesandbox.io/s/react-typescript-estfk?file=/src/TodoList.tsx)
 - [React Typescript Cheatsheet](https://github.com/typescript-cheatsheets/react-typescript-cheatsheet)
 - [Typescript React Starter](https://github.com/microsoft/TypeScript-React-Starter)
 
