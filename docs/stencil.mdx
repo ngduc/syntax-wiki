@@ -1,0 +1,37 @@
+export { Root } from './components'
+
+[Home](/) | Stencil - _Latest Syntax - Updated: May 2020 at [Github](https://github.com/ngduc/syntax.codes)_
+
+_Stencil - May, 2020_ <a class="tagButton" href="https://github.com/ionic-team/stencil/releases">1.14.0</a> <a class="tagButton" href="https://github.com/ionic-team/stencil/blob/master/CHANGELOG.md">CHANGELOG</a>
+
+<img src="https://i.ibb.co/4dtrd9Z/image.png" height="48" />
+
+## Stencil 1.14
+
+### Stencil Component
+
+```.js
+import { Component, State, Listen, h } from '@stencil/core';
+  
+@Component({
+  tag: 'my-toggle-button'
+})
+export class MyToggleButton {
+  @State() open: boolean;
+  
+  @Listen('click', { capture: true })
+  handleClick() {
+    this.open = !this.open;
+  }
+  
+  render() {
+    return <button>
+      {this.open ? "On" : "Off"}
+    </button>;
+  }
+}
+```
+
+#### References - External Links:
+- [Run this in Codesandbox](https://codesandbox.io/s/stencil-example-l06tm?file=/src/components/my-component/my-component.tsx)
+- [Stencil Docs](https://stenciljs.com/docs/state)

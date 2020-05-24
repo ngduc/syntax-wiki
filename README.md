@@ -11,8 +11,9 @@ Syntax.wiki aims to provide the latest code syntax (best practices or recommende
 
 - mdx-go
 - react-view
+- prism-react-renderer
 - babel & preset-typescript
-- zeit now
+- vercel now
 
 ### Development
 
