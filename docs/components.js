@@ -50,11 +50,19 @@ const components = {
   code
 };
 
-export const Root = (props) => (
-  <ComponentProvider components={components}>
-    <Head>
-      <title>Syntax.wiki</title>
-    </Head>
-    <div style={{ padding: 10 }}>{props.children}</div>
-  </ComponentProvider>
-);
+export const Root = (props) => {
+  let pageStyle = { maxWidth: 960, margin: '0 auto', textAlign: 'center' }; // page style
+
+  const isComparisonPage = props.location.pathname.indexOf('/compare') >= 0;
+  if (isComparisonPage) {
+    pageStyle = {}; // fullscreen comparison page (WIP)
+  }
+  return (
+    <ComponentProvider components={components}>
+      <Head>
+        <title>Syntax.wiki</title>
+      </Head>
+      <div style={pageStyle}>{props.children}</div>
+    </ComponentProvider>
+  );
+};
