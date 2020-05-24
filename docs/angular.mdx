@@ -1,8 +1,8 @@
 export { Root } from './components'
 
-[Home](/) | Angular — _Latest Syntax — Updated: May 2020 | [Edit page](https://github.com/ngduc/syntax.codes/edit/master/docs/angular.mdx)_
+[Home](/) | Angular — _Latest Syntax — Updated: May 2020 — [Edit page](https://github.com/ngduc/syntax.codes/edit/master/docs/angular.mdx)_
 
-_Angular — May, 2020_ <a class="tagButton" href="https://github.com/angular/angular/releases">9.1.7</a> <a class="tagButton" href="https://github.com/angular/angular/blob/master/CHANGELOG.md">CHANGELOG</a>
+<a className="tagButton" href="https://github.com/angular/angular/releases">9.1.7</a> <a className="tagButton" href="https://github.com/angular/angular/blob/master/CHANGELOG.md">CHANGELOG</a>
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/80px-Angular_full_color_logo.svg.png" height="48" />
 
@@ -31,14 +31,14 @@ interface Item {
 export class AppComponent implements OnInit, OnDestroy {
   @Input(100) maxItems: number;
   items: Item[] = [{ title: 'Item 1' }, { title: 'Item 2' }];
-
+  
   ngOnInit(): void {}
   ngOnDestroy(): void {}
-
+  
   fetchMore(): void {
     this.items = [...this.items, { title: 'Fetched Item' }];
   }
-
+  
   trackByFn(index: number, item: Item) {
     return index; // or: item.id
   }

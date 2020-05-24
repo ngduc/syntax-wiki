@@ -1,8 +1,8 @@
 export { Root } from './components'
 
-[Home](/) | React — _Latest Syntax — Updated: May 2020 | [Edit page](https://github.com/ngduc/syntax.codes/edit/master/docs/react.mdx)_
+[Home](/) | React — _Latest Syntax — Updated: May 2020 — [Edit page](https://github.com/ngduc/syntax.codes/edit/master/docs/react.mdx)_
 
-_React — Mar 19, 2020_ <a class="tagButton" href="https://github.com/facebook/react/releases">16.13.1</a> <a class="tagButton" href="https://github.com/facebook/react/blob/master/CHANGELOG.md">CHANGELOG</a>
+<a className="tagButton" href="https://github.com/facebook/react/releases">16.13.1</a> <a className="tagButton" href="https://github.com/facebook/react/blob/master/CHANGELOG.md">CHANGELOG</a>
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png" height="48" />
 
@@ -12,15 +12,14 @@ _React — Mar 19, 2020_ <a class="tagButton" href="https://github.com/facebook/
 
 ```.tsx
 import * as React from 'react'
-
+  
 export interface Item {
   title: string
   done?: boolean
 }
 export interface Props {
   initialItems?: Item[]
-}
-  
+} 
 export default function TodoList({ initialItems = [] }: Props): React.ReactElement {
   const [items, setItems] = React.useState<Item[]>(initialItems)
 
