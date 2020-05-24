@@ -27,6 +27,7 @@ interface Item {
   // templateUrl: './app.component.html', // for template file
   styleUrls: ['./app.component.css']
 })
+  
 export class AppComponent implements OnInit, OnDestroy {
   @Input(100) maxItems: number;
   items: Item[] = [{ title: 'Item 1' }, { title: 'Item 2' }];

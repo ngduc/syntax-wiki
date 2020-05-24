@@ -1,5 +1,9 @@
 # Development
 
+### Themes
+
+Copy CSS from https://github.com/PrismJS/prism-themes
+
 ### Customize mdx-go
 
 At this time, mdx-go doesn't have flexibility to customize webpack index.html. Follow this to customize it locally:

@@ -10,7 +10,7 @@ _React - Mar 19, 2020_ <a class="tagButton" href="https://github.com/facebook/re
 
 ### Functional Component
 
-```.jsx
+```.tsx
 import * as React from 'react'
 
 export interface Item {
@@ -20,6 +20,7 @@ export interface Item {
 export interface Props {
   initialItems?: Item[]
 }
+  
 export default function TodoList({ initialItems = [] }: Props): React.ReactElement {
   const [items, setItems] = React.useState<Item[]>(initialItems)
 
@@ -43,19 +44,20 @@ export default function TodoList({ initialItems = [] }: Props): React.ReactEleme
 
 ### Functional Component - Arrow syntax
 
-```.jsx
+```.tsx
 const MyComponent: React.FC<Props> = ({ value }) => <div>Syntax</div>
 ```
 
 ### Class
 
-```.jsx
+```.tsx
 interface Props {
   value: number
 }
 interface State {
   text: string
 }
+  
 class MyComponent extends React.Component<Props, State> {
   static defaultProps: Props = {
     value: 0
@@ -80,20 +82,20 @@ class MyComponent extends React.Component<Props, State> {
 
 ### Functional Component
 
-```.jsx
+```.tsx
 function MyComponent(props) {
   const [text, setText] = React.useState('Example');
 
   return <div>Syntax {props.value} {text}</div> 
 }
-
+  
 // arrow syntax
 const AnotherComponent = (props) => <div>Syntax {props.value}</div>
 ```
 
 ### Class
 
-```.jsx
+```.tsx
 class MyComponent extends React.Component {
   static defaultProps = {
     value: 0

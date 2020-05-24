@@ -19,28 +19,29 @@ _Vue - May, 2020_ <a class="tagButton" href="https://github.com/vuejs/vue-next/r
     <button v-on:click="fetchMore">Fetch More</button>
   </v-fragment>
 </template>
-
+  
 <script>
-import { ref, computed, onMounted } from "vue";
+  import { ref, computed, onMounted } from "vue";
 
-export default {
-  setup() {
-    onMounted(() => console.log("component mounted!"));
-    const items = ref([{ title: "Item 1" }, { title: "Item 2" }]);
-    const fetchMore = () => {
-      items.value = [...items.value, { title: "Fetched item" }];
-    };
-    return {
-      items,
-      fetchMore
-    };
-  }
-};
+  export default {
+    setup(props) {
+      onMounted(() => console.log("component mounted!"));
+      const items = ref([{ title: "Item 1" }, { title: "Item 2" }]);
+      const fetchMore = () => {
+        items.value = [...items.value, { title: "Fetched item" }];
+      };
+      return {
+        items,
+        fetchMore
+      };
+    }
+  };
 </script>
-
+  
 <style scoped></style>
 ```
 
 #### References:
 - [Run this in Codesandbox](https://codesandbox.io/s/vue-3-8qy7f?file=/src/App.vue)
 - [VueJS API](https://composition-api.vuejs.org/api.html)
+- [Vue 3 Composition API Cheatsheet](https://www.vuemastery.com/pdf/Vue-3-Cheat-Sheet.pdf)

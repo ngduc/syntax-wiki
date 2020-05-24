@@ -6,8 +6,8 @@ TODO.md Task Board
 
 ### Todo
 
-- [ ] Add: Svelte page  
 - [ ] Add: Python page  
+- [ ] Add: StencilJS page  
 
 ### In Progress
 
@@ -16,7 +16,9 @@ TODO.md Task Board
 
 ### Done ✓
 
+- [x] Add: Svelte page  
 - [x] Add: Vue page  
 - [x] Add: Angular page  
 - [x] Add: Live Codesandbox link  
 - [x] Add: React page  
+

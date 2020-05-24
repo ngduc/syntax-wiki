@@ -15,9 +15,9 @@ const code = (props) => {
   if (!isLive) {
     // return <pre {...props} className={`${props.className} language-markup`} />;
     return (
-      <Highlight {...defaultProps} code={code} language="tsx">
+      <Highlight {...defaultProps} code={code} language="tsx" theme={undefined}>
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
-          <pre className={className} style={style}>
+          <div className={className} style={style}>
             {tokens.map((line, i) => (
               <div {...getLineProps({ line, key: i })}>
                 {line.map((token, key) => (
@@ -25,7 +25,7 @@ const code = (props) => {
                 ))}
               </div>
             ))}
-          </pre>
+          </div>
         )}
       </Highlight>
     );

@@ -23,14 +23,14 @@ _Svelte - May, 2020_ <a class="tagButton" href="https://github.com/sveltejs/svel
 	{/if}
 	<button on:click={fetchMore}>Fetch More</button>
 </div>
-
+  
 <script>
   let items = [{ title: "Item 1" }, { title: "Item 2" }];
   function fetchMore() {
     items = [...items, { title: "Fetched item" }];
   }
 </script>
-
+  
 <style>
   h2 {
     color: darkblue;
