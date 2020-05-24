@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "mdx-go docs",
-    "cp-files": "cp docs/main.css dist/main.css",
+    "cp-files": "cp docs/main.css dist/main.css && cp tools/favicon.ico dist/",
     "build": "rm -rf dist && mdx-go build docs && npm run cp-files",
     "web": "./tools/publish.sh"
   },
