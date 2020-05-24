@@ -1,8 +1,13 @@
 # Development
 
+### Publish
+
+Run `$ yarn build && yarn web`
+
 ### Themes
 
-Copy CSS from https://github.com/PrismJS/prism-themes
+- Copy and customize CSS from https://github.com/PrismJS/prism-themes
+- Put in main.css
 
 ### Customize mdx-go
 

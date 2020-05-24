@@ -7,15 +7,17 @@ TODO.md Task Board
 ### Todo
 
 - [ ] Add: Python page  
-- [ ] Fork and customize mdx-go  
 - [ ] Codesandbox: add footer github links  
+- [ ] Component: header  
+- [ ] Component: footer  
 
 ### In Progress
 
-- [ ] Add: Edit link to start a Github PR  
+- [ ] Fork and customize mdx-go  
 
 ### Done ✓
 
+- [x] Add: Edit link to start a Github PR  
 - [x] Syntax highlighting for other langs  
 - [x] Add: StencilJS page  
 - [x] Add: Svelte page  

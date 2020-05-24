@@ -1,8 +1,8 @@
 export { Root } from './components'
 
-[Home](/) | Stencil - _Latest Syntax - Updated: May 2020 at [Github](https://github.com/ngduc/syntax.codes)_
+[Home](/) | Stencil — _Latest Syntax — Updated: May 2020 | [Edit page](https://github.com/ngduc/syntax.codes/edit/master/docs/stencil.mdx)_
 
-_Stencil - May, 2020_ <a class="tagButton" href="https://github.com/ionic-team/stencil/releases">1.14.0</a> <a class="tagButton" href="https://github.com/ionic-team/stencil/blob/master/CHANGELOG.md">CHANGELOG</a>
+_Stencil — May, 2020_ <a class="tagButton" href="https://github.com/ionic-team/stencil/releases">1.14.0</a> <a class="tagButton" href="https://github.com/ionic-team/stencil/blob/master/CHANGELOG.md">CHANGELOG</a>
 
 <img src="https://i.ibb.co/4dtrd9Z/image.png" height="48" />
 
@@ -11,23 +11,38 @@ _Stencil - May, 2020_ <a class="tagButton" href="https://github.com/ionic-team/s
 ### Stencil Component
 
 ```.js
-import { Component, State, Listen, h } from '@stencil/core';
+import { Component, Prop, State, h } from "@stencil/core";
   
+export interface Item {
+  title: string;
+  done?: boolean;
+}
 @Component({
-  tag: 'my-toggle-button'
+  tag: "my-component",
+  styleUrl: "my-component.scss",
+  shadow: true
 })
-export class MyToggleButton {
-  @State() open: boolean;
+export class MyComponent {
+  @Prop() initialItems: Item[];
+  @State() items: Item[] = [{ title: "Item 1" }];
   
-  @Listen('click', { capture: true })
-  handleClick() {
-    this.open = !this.open;
-  }
+  fetchMore = () => {
+    this.items = [...this.items, { title: "Fetched item" }];
+  };
   
   render() {
-    return <button>
-      {this.open ? "On" : "Off"}
-    </button>;
+    return (
+      <div>
+        {this.items.length > 0 && (
+          <ul>
+            {this.items.map(item => (
+              <li>{item.title}</li>
+            ))}
+          </ul>
+        )}
+        <button onClick={this.fetchMore}>Fetch More</button>
+      </div>
+    );
   }
 }
 ```
