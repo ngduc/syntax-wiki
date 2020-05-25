@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentProvider, Head } from 'mdx-go';
 import { useView, Compiler, Editor, Error } from 'react-view';
-import { isMobile, loadScript } from './utils/Util';
+import { isMobile, initHypothesisOnce } from './utils/Util';
 import presetTypescript from '@babel/preset-typescript';
 
 // import LogRocket from 'logrocket';
@@ -53,9 +53,7 @@ const components = {
 
 export const Root = (props) => {
   React.useEffect(() => {
-    if (!isMobile()) {
-      loadScript('https://hypothes.is/embed.js');
-    }
+    initHypothesisOnce();
   }, []);
 
   let pageStyle = { margin: '0 auto', textAlign: 'center' }; // page style

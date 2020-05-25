@@ -31,3 +31,12 @@ export function loadScript(src, callback) {
   script.src = src;
   document.head.appendChild(script);
 }
+
+let initHypothesisFlag = false;
+export function initHypothesisOnce() {
+  if (!initHypothesisFlag && !isMobile()) {
+    loadScript('https://hypothes.is/embed.js', () => {
+      initHypothesisFlag = true;
+    });
+  }
+}
