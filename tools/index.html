@@ -2,20 +2,29 @@
 <html>
   <head>
     <meta charset='utf-8'>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <meta name='viewport' content='width=device-width,initial-scale=1'>
     <style>*{box-sizing:border-box}body{margin:0;font-family:system-ui,sans-serif}</style>
-    <title data-head="true">Syntax.wiki</title><link rel='prefetch' as='script' href='/main.js'><link rel='prefetch' as='script' href='/1.main.js'><link rel='prefetch' as='script' href='/2.main.js'>
+    ${head}${css}${links}${prefetch}
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166789841-1"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);}; gtag('js', new Date()); gtag('config', 'UA-166789841-1');</script>
+    <!-- Smartlook -->
     <script>
-      window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);}; gtag('js', new Date()); gtag('config', 'UA-166789841-1');
+      window.smartlook||(function(d) {
+        var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
+        var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
+        c.charset='utf-8';c.src='https://rec.smartlook.com/recorder.js';h.appendChild(c);
+      })(document); smartlook('init', '7c37dbe92887f63af4735b43c4ebdff83d70020d');
     </script>
+    <!-- Hypothesis -->
+    <script>window.hypothesisConfig = function () { return { showHighlights: true, appType: "bookmarklet" };};</script>
     <link rel="stylesheet" type="text/css" href="./main.css">
-    
   </head>
   <body>
-    <div id=root><div style="padding:10px"><div style="outline:none" tabindex="-1"><div><p><em>Latest React Syntax - Updated: May 2020 at <a href="https://github.com/ngduc/syntax.codes">Github</a></em></p><h2 id="react-in-typescript"><a href="#react-in-typescript" style="text-decoration:none;color:inherit">React in Typescript</a></h2><h3 id="functional-component"><a href="#functional-component" style="text-decoration:none;color:inherit">Functional Component</a></h3><h3 id="functional-component---arrow-syntax"><a href="#functional-component---arrow-syntax" style="text-decoration:none;color:inherit">Functional Component - Arrow syntax</a></h3><h3 id="class"><a href="#class" style="text-decoration:none;color:inherit">Class</a></h3><h1 id=""><a href="#" style="text-decoration:none;color:inherit"></a></h1><hr/><h2 id="react-in-javascript"><a href="#react-in-javascript" style="text-decoration:none;color:inherit">React in Javascript</a></h2><h3 id="functional-component-1"><a href="#functional-component-1" style="text-decoration:none;color:inherit">Functional Component</a></h3><h3 id="class-1"><a href="#class-1" style="text-decoration:none;color:inherit">Class</a></h3></div></div></div></div>
-    <script src='/main.js'></script>
+    <div id=root>${body}</div>
+    ${noScript ? '' : scripts}
   </body>
 </html>

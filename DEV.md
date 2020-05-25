@@ -17,7 +17,7 @@ At this time, mdx-go doesn't have flexibility to customize webpack index.html. F
 $ code node_modules/mdx-go/lib/html-plugin.js
 
 + after: defaultTemplate
-  customize HTML
+  customize HTML with tools/index.html
 ```
 
 and

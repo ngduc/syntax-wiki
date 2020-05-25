@@ -86,6 +86,9 @@ img#home_logo {
 }
 
 @media only screen and (max-width: 768px) {
+  body {
+    font-size: 0.9em;
+  }
   ul#mainList li {
     width: 40%;
   }
@@ -167,6 +170,9 @@ pre[class*="language-"] {
 
 .token {
   color: #032f62;
+}
+.token-line {
+  white-space: break-spaces;
 }
 
 .token.atrule {

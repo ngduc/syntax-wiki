@@ -4,6 +4,7 @@ Changelog
 
 ## [0.1.0] - 2020-05-16
 
+- Add: hypothes.is as a commenting system
 - Add: links for releases, changelog
 - Add: Angular, Vue, Svelte pages
 - Add: prism-react-renderer

@@ -1,10 +1,11 @@
 import React from 'react';
 import { ComponentProvider, Head } from 'mdx-go';
 import { useView, Compiler, Editor, Error } from 'react-view';
+import { isMobile, loadScript } from './utils/Util';
 import presetTypescript from '@babel/preset-typescript';
 
-import LogRocket from 'logrocket';
-LogRocket.init('kztcdf/syntaxcodes');
+// import LogRocket from 'logrocket';
+// LogRocket.init('kztcdf/syntaxcodes');
 
 import Highlight, { defaultProps } from 'prism-react-renderer';
 
@@ -51,8 +52,16 @@ const components = {
 };
 
 export const Root = (props) => {
-  let pageStyle = { maxWidth: 960, margin: '0 auto', textAlign: 'center' }; // page style
+  React.useEffect(() => {
+    if (!isMobile()) {
+      loadScript('https://hypothes.is/embed.js');
+    }
+  }, []);
 
+  let pageStyle = { margin: '0 auto', textAlign: 'center' }; // page style
+  if (!isMobile()) {
+    pageStyle.maxWidth = 960; // desktop style => center layout
+  }
   const isComparisonPage = props.location.pathname.indexOf('/compare') >= 0;
   if (isComparisonPage) {
     pageStyle = {}; // fullscreen comparison page (WIP)
