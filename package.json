@@ -8,6 +8,7 @@
     "url": "git+https://github.com/ngduc/syntax.codes.git"
   },
   "scripts": {
+    "e2e": "start-server-and-test 'api-now -s ./dist' 3003 'jest'",
     "start": "mdx-go docs",
     "cp-files": "cp docs/main.css dist/main.css && cp tools/favicon.ico dist/",
     "build": "rm -rf dist && mdx-go build docs && npm run cp-files",
@@ -23,5 +24,16 @@
     "prism-react-renderer": "^1.1.0",
     "react-view": "^2.3.2",
     "style-loader": "^1.2.1"
+  },
+  "jest": {
+    "preset": "jest-playwright-preset"
+  },
+  "devDependencies": {
+    "api-now": "^0.5.4",
+    "expect-playwright": "^0.2.4",
+    "jest": "^26.0.1",
+    "jest-playwright-preset": "^0.2.2",
+    "playwright-chromium": "^1.0.2",
+    "start-server-and-test": "^1.11.0"
   }
 }

@@ -1,5 +1,7 @@
 # Development
 
+Node v13.9.0
+
 ### Publish
 
 Run `$ yarn build && yarn web`
@@ -12,6 +14,7 @@ Run `$ yarn build && yarn web`
 ### Customize mdx-go
 
 At this time, mdx-go doesn't have flexibility to customize webpack index.html. Follow this to customize it locally:
+- NOTE: these changes will be lost after running "$ yarn..."
 
 ```
 $ code node_modules/mdx-go/lib/html-plugin.js
