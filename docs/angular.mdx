@@ -1,6 +1,6 @@
 export { Root } from './components'
 
-[Home](/) | Angular — _Latest Syntax — Updated: May 2020 — [✎ Edit page](https://github.com/ngduc/syntax.codes/edit/master/docs/angular.mdx) — [💬 Discuss](https://github.com/ngduc/syntax.codes/issues/2)_
+[Home](/) | Angular — _Latest Syntax — Updated: Jun 2020 — [✎ Edit page](https://github.com/ngduc/syntax.codes/edit/master/docs/angular.mdx) — [💬 Discuss](https://github.com/ngduc/syntax.codes/issues/2)_
 
 <a className="tagButton" href="https://github.com/angular/angular/releases">9.1.7</a> <a className="tagButton" href="https://github.com/angular/angular/blob/master/CHANGELOG.md">CHANGELOG</a>
 
@@ -8,7 +8,7 @@ export { Root } from './components'
 
 ## Angular 9
 
-### Component with Typescript
+### Component with Typescript (40 LOC)
 
 ```.js
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
@@ -21,26 +21,37 @@ interface Item {
   selector: 'app-root',
   template: `
     <ul *ngIf="items.length > 0">
-      <li *ngFor="let item of items; trackBy: trackByFn">{{ item.title }}</li>
+      <li *ngFor="let item of items; index as idx; trackBy: trackByFn">
+        {{ item.title }}
+        <a (click)="deleteItem(idx)">X</a>
+      </li>
     </ul>
-    <button (click)="fetchMore()">Fetch More</button>
+    <input value="{{ title }}" #titleInput (keyup)="onKey(titleInput.value)" />
+    <button (click)="addItem()">Fetch More</button>
   `,
   // templateUrl: './app.component.html', // for template file
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit, OnDestroy {
   @Input(100) maxItems: number;
-  items: Item[] = [{ title: 'Item 1' }, { title: 'Item 2' }];
-  
   ngOnInit(): void {}
   ngOnDestroy(): void {}
   
-  fetchMore(): void {
-    this.items = [...this.items, { title: 'Fetched Item' }];
-  }
-  
+  title = '';
+  items: Item[] = [{ title: 'Item 1' }];
   trackByFn(index: number, item: Item) {
     return index; // or: item.id
+  }
+  
+  onKey(value: string) {
+    this.title = value;
+  }
+  addItem(): void {
+    this.items = [...this.items, { title: this.title }];
+    this.title = '';
+  }
+  deleteItem(idx: number): void {
+    this.items = this.items.filter((_, itemIdx) => itemIdx !== idx);
   }
 }
 ```

@@ -1,6 +1,6 @@
 export { Root } from './components'
 
-[Home](/) | Vue — _Latest Syntax — Updated: May 2020 — [✎ Edit page](https://github.com/ngduc/syntax.codes/edit/master/docs/vue.mdx) — [💬 Discuss](https://github.com/ngduc/syntax.codes/issues/3)_
+[Home](/) | Vue — _Latest Syntax — Updated: Jun 2020 — [✎ Edit page](https://github.com/ngduc/syntax.codes/edit/master/docs/vue.mdx) — [💬 Discuss](https://github.com/ngduc/syntax.codes/issues/3)_
 
 <a className="tagButton" href="https://github.com/vuejs/vue-next/releases">3.0.0-beta.13</a> <a className="tagButton" href="https://github.com/vuejs/vue-next/blob/master/CHANGELOG.md">CHANGELOG</a>
 
@@ -8,34 +8,43 @@ export { Root } from './components'
 
 ## Vue 3 beta
 
-### Component with Composition API
+### Component with Composition API (34 LOC)
 
 ```.js
 <template>
   <v-fragment>
     <ul v-if="items.length > 0">
-      <li v-for="(item, index) in items" :key="index">{{ item.title }}</li>
+      <li v-for="(item, index) in items" :key="index">
+        {{ item.title }}
+        <a v-on:click="deleteItem(index)">X</a>
+      </li>
     </ul>
-    <button v-on:click="fetchMore">Fetch More</button>
+    <input v-model="title" placeholder="Task Title">
+    <button v-on:click="addItem">Add Item</button>
   </v-fragment>
 </template>
   
 <script>
-  import { ref, computed, onMounted } from "vue";
+import { ref, computed, onMounted } from 'vue';
   
-  export default {
-    setup(props) {
-      onMounted(() => console.log("component mounted!"));
-      const items = ref([{ title: "Item 1" }, { title: "Item 2" }]);
-      const fetchMore = () => {
-        items.value = [...items.value, { title: "Fetched item" }];
-      };
-      return {
-        items,
-        fetchMore
-      };
-    }
-  };
+export default {
+  setup(props) {
+    onMounted(() => console.log('component mounted!'));
+    const items = ref([{ title: 'Item 1' }]);
+    const title = ref('');
+    const addItem = () => {
+      items.value = [...items.value, { title: title.value }];
+      title.value = '';
+    };
+    const deleteItem = (index) => items.value = items.value.filter((_, idx) => idx !== index);
+    return {
+      items,
+      title,
+      addItem,
+      deleteItem
+    };
+  }
+};
 </script>
   
 <style scoped></style>

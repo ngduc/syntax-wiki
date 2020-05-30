@@ -1,6 +1,6 @@
 export { Root } from './components'
 
-[Home](/) | React — _Latest Syntax — Updated: May 2020 — [✎ Edit page](https://github.com/ngduc/syntax.codes/edit/master/docs/react.mdx) — [💬 Discuss](https://github.com/ngduc/syntax.codes/issues/1)_
+[Home](/) | React — _Latest Syntax — Updated: Jun 2020 — [✎ Edit page](https://github.com/ngduc/syntax.codes/edit/master/docs/react.mdx) — [💬 Discuss](https://github.com/ngduc/syntax.codes/issues/1)_
 
 <a className="tagButton" href="https://github.com/facebook/react/releases">16.13.1</a> <a className="tagButton" href="https://github.com/facebook/react/blob/master/CHANGELOG.md">CHANGELOG</a>
 
@@ -8,38 +8,50 @@ export { Root } from './components'
 
 ## React 16 in Typescript
 
-### Functional Component
+### Functional Component (33 LOC)
 
 ```.tsx
-import * as React from 'react'
+import * as React from 'react';
   
 export interface Item {
-  title: string
-  done?: boolean
+  title: string;
+  done?: boolean;
 }
 export interface Props {
-  initialItems?: Item[]
-} 
+  initialItems?: Item[];
+}
 export default function TodoList({ initialItems = [] }: Props): React.ReactElement {
-  const [items, setItems] = React.useState<Item[]>(initialItems)
-
-  const fetchMore = () => {
-    setItems([...items, { title: 'Fetched item' }])
-  }
+  const [items, setItems] = React.useState<Item[]>(initialItems);
+  const [title, setTitle] = React.useState('');
+  
+  const addItem = () => {
+    setItems([...items, { title }]);
+    setTitle('');
+  };
+  const deleteItem = (index: number) => {
+    setItems(items.filter((_, idx) => idx !== index));
+  };
   return (
     <>
       {items.length > 0 && (
         <ul>
-          {items.map((item) => (
-            <li>{item.title}</li>
+          {items.map((item, index) => (
+            <li>
+              {item.title} <a onClick={() => deleteItem(index)}>X</a>
+            </li>
           ))}
         </ul>
       )}
-      <button onClick={fetchMore}>Fetch More</button>
+      <input value={title} placeholder="Task Title" onChange={(e) => setTitle(e.target.value)} />
+      <button onClick={addItem}>Add Item</button>
     </>
-  )
+  );
 }
 ```
+#### References - External Links:
+- [Run this in Codesandbox](https://codesandbox.io/s/react-typescript-estfk?file=/src/TodoList.tsx)
+- [React Typescript Cheatsheet](https://github.com/typescript-cheatsheets/react-typescript-cheatsheet)
+- [Typescript React Starter](https://github.com/microsoft/TypeScript-React-Starter)
 
 ### Functional Component - Arrow syntax
 
@@ -56,8 +68,7 @@ interface Props {
 interface State {
   text: string
 }
-  
-class MyComponent extends React.Component<Props, State> {
+export default class MyComponent extends React.Component<Props, State> {
   static defaultProps: Props = {
     value: 0
   }
@@ -69,13 +80,9 @@ class MyComponent extends React.Component<Props, State> {
 }
 ```
 
-#### References - External Links:
-- [Run this in Codesandbox](https://codesandbox.io/s/react-typescript-estfk?file=/src/TodoList.tsx)
-- [React Typescript Cheatsheet](https://github.com/typescript-cheatsheets/react-typescript-cheatsheet)
-- [Typescript React Starter](https://github.com/microsoft/TypeScript-React-Starter)
-
 #
----------------
+
+----
 
 ## React in Javascript
 
@@ -95,7 +102,7 @@ const AnotherComponent = (props) => <div>Syntax {props.value}</div>
 ### Class
 
 ```.tsx
-class MyComponent extends React.Component {
+export default class MyComponent extends React.Component {
   static defaultProps = {
     value: 0
   }
