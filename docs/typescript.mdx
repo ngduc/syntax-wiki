@@ -1,0 +1,69 @@
+export { Root } from './components'
+
+[Home](/) | Typescript — _Latest Syntax — Updated: Jun 2020 — [✎ Edit page](https://github.com/ngduc/syntax.codes/edit/master/docs/typescript.mdx) — [💬 Discuss](https://github.com/ngduc/syntax.codes/issues/1)_
+
+<a className="tagButton" href="https://github.com/microsoft/TypeScript/releases">3.9.5</a> <a className="tagButton" href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-9.html">CHANGELOG</a>
+
+<img src="https://miro.medium.com/max/300/1*ts3lYA8TB3a6qWmDknphoQ.png" height="48" />
+
+## Typescript
+
+### React Typescript Examples:
+
+```.tsx
+import * as React from 'react';
+import { render } from 'react-dom';
+  
+interface Todo {
+  userId: number;
+  id: number;
+  title: string;
+  completed: boolean;
+}
+async function fetchTodos(request: RequestInfo): Promise<Todo[]> {
+  const response = await fetch(request);
+  const body = await response.json();
+  return body;
+}
+  
+enum Color {
+  blue = 'Blue Color', // value = 'Label'
+  orange = 'Orange Color'
+}
+type ColorKey = keyof typeof Color;
+  
+interface BaseProps {
+  name: string
+}
+interface AppProps extends BaseProps {
+  pageId?: string
+}
+export default function App({ name }: AppProps) {
+  const [color, setColor] = React.useState(Object.keys(Color)[0]);
+  const [todos, setTodos] = React.useState<Todo[]>([]);
+  React.useEffect(() => {
+    (async () => {
+      const arr: Todo[] = await fetchTodos('https://jsonplaceholder.typicode.com/todos')
+      setTodos(arr);
+    })();
+  }, [])
+  return (
+    <div>
+      <h3 style={{ color }}>Typescript 3.9.5, Hello {name ?? 'DefaultValue'}</h3>
+      <select onChange={(ev: React.ChangeEvent<HTMLSelectElement>) => setColor(ev.target.value)}>
+        {Object.keys(Color).map((color) => (
+          <option key={color} value={color}>
+            {Color[color as ColorKey]}
+          </option>
+        ))}
+      </select>
+      <h3>Fetched todo items:</h3>
+      {todos.map((item) => <div key={item.id}>{item.id} - {item.title}</div>)}
+    </div>
+  );
+}
+render(<App name="App" />, document.getElementById("root"));
+```
+#### References - External Links:
+- [Run this in Codesandbox](https://codesandbox.io/s/typescript-examples-iwt4o?file=/src/index.tsx)
+- [Typescript Lang](https://www.typescriptlang.org)

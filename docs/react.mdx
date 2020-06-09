@@ -14,6 +14,7 @@ export { Root } from './components'
 import * as React from 'react';
   
 export interface Item {
+  id: string;
   title: string;
   done?: boolean;
 }
@@ -25,19 +26,17 @@ export default function TodoList({ initialItems = [] }: Props): React.ReactEleme
   const [title, setTitle] = React.useState('');
   
   const addItem = () => {
-    setItems([...items, { title }]);
+    setItems([...items, { id: `${Math.random()}`, title }]);
     setTitle('');
   };
-  const deleteItem = (index: number) => {
-    setItems(items.filter((_, idx) => idx !== index));
-  };
+  const deleteItem = (index: number) => setItems(items.filter((_, idx) => idx !== index));
   return (
     <>
       {items.length > 0 && (
         <ul>
           {items.map((item, index) => (
-            <li>
-              {item.title} <a onClick={() => deleteItem(index)}>X</a>
+            <li key={item.id}>
+              {item.title} <button onClick={() => deleteItem(index)}>X</button>
             </li>
           ))}
         </ul>
