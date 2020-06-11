@@ -49,7 +49,7 @@ export default function App({ name }: AppProps) {
   }, [])
   return (
     <div>
-      <h3 style={{ color }}>Typescript 3.9.5, Hello {name ?? 'DefaultValue'}</h3>
+      <h3 style={{ color }}>Typescript, Hello {name ?? 'DefaultValue'}</h3>
       <select onChange={(ev: React.ChangeEvent<HTMLSelectElement>) => setColor(ev.target.value)}>
         {Object.keys(Color).map((color) => (
           <option key={color} value={color}>
@@ -64,6 +64,16 @@ export default function App({ name }: AppProps) {
 }
 render(<App name="App" />, document.getElementById("root"));
 ```
+
+<details>
+  <summary>Expand to see the output.</summary>  
+  <iframe
+    src="https://codesandbox.io/embed/typescript-examples-iwt4o?module=/src/index.tsx&theme=light&view=preview&hidenavigation=1&hidedevtools=1"
+    style={{ width: '100%', height: 300, border: 0, borderRadius: 4 }}
+    allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+    sandbox="allow-autoplay allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+  ></iframe>
+</details>
+
 #### References - External Links:
-- [Run this in Codesandbox](https://codesandbox.io/s/typescript-examples-iwt4o?file=/src/index.tsx)
-- [Typescript Lang](https://www.typescriptlang.org)
+[Run this in Codesandbox](https://codesandbox.io/s/typescript-examples-iwt4o?module=/src/index.tsx) — [Typescript Lang](https://www.typescriptlang.org)

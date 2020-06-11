@@ -67,7 +67,7 @@ export const Root = (props) => {
   return (
     <ComponentProvider components={components}>
       <Head>
-        <title>Syntax.wiki</title>
+        <title>Syntax.wiki - latest code syntax of frameworks and programming languages.</title>
       </Head>
       <div style={pageStyle}>{props.children}</div>
     </ComponentProvider>

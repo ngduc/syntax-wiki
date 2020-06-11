@@ -20,6 +20,8 @@ Syntax.wiki aims to provide the latest code syntax (best practices or recommende
 ```
 $ yarn build      Build project to ./dist
 $ yarn deploy     Publish to zeit now (vercel)
+
+$ yarn dev
 ```
 
 See: [DEV.md](DEV.md)

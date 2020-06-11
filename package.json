@@ -9,7 +9,7 @@
   },
   "scripts": {
     "e2e": "start-server-and-test 'api-now -s ./dist' 3003 'jest'",
-    "start": "mdx-go docs",
+    "dev": "mdx-go docs",
     "cp-files": "cp docs/main.css dist/main.css && cp tools/favicon.ico dist/",
     "build": "rm -rf dist && mdx-go build docs && npm run cp-files",
     "deploy": "./tools/publish.sh"
