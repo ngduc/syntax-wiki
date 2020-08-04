@@ -20,6 +20,7 @@ Syntax.wiki aims to provide the latest code syntax (best practices or recommende
 ```
 $ yarn build      Build project to ./dist
 $ yarn deploy     Publish to zeit now (vercel)
+$ yarn e2e        Run E2E test (need yarn build first)
 
 $ yarn dev
 ```
