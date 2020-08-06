@@ -1,0 +1,72 @@
+# React Component Library Comparison
+
+## Features - 2020-08
+
+&nbsp; | Chakra UI | Reakit | Semantic UI React
+| :-- | :-- | :-- | :-- |
+| Links | [Github](https://github.com/chakra-ui/chakra-ui) - [Demo](https://next.chakra-ui.com/docs/getting-started) | [Github](https://github.com/reakit/reakit) - [Link](https://reakit.io/docs/get-started/) | [Github](https://github.com/Semantic-Org/Semantic-UI-React) - [Demo](https://react.semantic-ui.com/) |
+| Status | 9k stars | 4.2k stars | 11.5k stars |
+| Size | 100 KB gz | 20 KB gz | ? |
+| Typescript source | ✔ | ✔ | JS with d.ts |
+| Tree shaking | ✔ | ✔ | ✔ |
+| WAI-ARIA | ✔ 1.1 | ✔ 1.1 | Yes, partial |
+| Styles | Style props | React | LESS |
+| Themes | styleConfig({...}), CSS-in-JS | Yes, reakit-system-bootstrap | LESS vars |
+| Dark Theme | ✔ | N/A | N/A |
+| Layout | Grid, Flex, Box | N/A | Container, Grid |
+| Icons | ✔ | N/A | ✔ |
+| Table | N/A | N/A | ✔ |
+| Popover | ✔ | ✔ | ✔ Popper |
+| Smart popover | ✔ | ✔ | ✔ |
+| Table | N/A | N/A | ✔ |
+
+## Form
+
+&nbsp; | Chakra | Reakit | Semantic UI React |
+| :-- | :-- | :-- | :-- |
+| Form | uses Formik | Custom reakit/Form | Custom |
+| Validation | Field validate prop | useFormState onValidate | react-hook-form |
+| Field error style | ✔ | ✔ | Yes, error prop |
+
+## Modal
+
+&nbsp; | Chakra | Reakit | Semantic UI React |
+| :-- | :-- | :-- | :-- |
+| Syntax | Modal isOpen onClose | DialogBackdrop, Dialog | Modal open, Modal.Content |
+| Animating | ✔ CSS? | ✔ CSS | ✔ |
+| Nested | ? | ✔ | ? |
+
+## Mobile Browser
+
+&nbsp; | Chakra | Reakit | Semantic UI React |
+| :-- | :-- | :-- | :-- |
+| Touch / Tap | ✔ | ✔ | ✔ |
+| Smooth animation | ✔ | ✔ | ✔ |
+| Accordion | Works | N/A | Works |
+| Drawer / Sidebar | Works | N/A | Works |
+| Modal | Works | Works, body shifted | Works, partially cut off |
+| Modal scroll | Works | ? | Works, partially cut off |
+| Popover | Works | Works | Works |
+| Table | ? | ? | Works |
+| Tooltip | Works | Works |
+
+## Summary
+
+&nbsp; | Chakra | Reakit | Semantic UI React |
+| :-- | :-- | :-- | :-- |
+| Strengths | + Many components | + Small size | + Many components |
+| | + Style props (inspired by Tailwinds) | + Lower level components | + Layouts |
+| | + Layouts | | |
+| Need improvements | | Need more components, layouts | Better demos for mobile |
+
+## FAQ
+
+I also evaluated other libraries: Rebass, Material UI, Atlaskit, Fluent, Spectrum, PatternFly, etc. They may get into this list later.
+
+Found a mistake? - Please feel free to [create a ticket](https://github.com/ngduc/syntax.codes/issues).
+
+Want to suggest a UI Component Library? - If it's comparable with the above projects, please feel free to [create a ticket](https://github.com/ngduc/syntax.codes/issues).
+
+---
+
+_[Syntax.wiki](https://syntax.wiki) 2020 - Bookmark this page for latest changes._

@@ -101,6 +101,12 @@ img#home_logo {
   }
 }
 
+th {
+  width: 150px;
+}
+tr {
+  height: 2em;
+}
 
 /* --- https://github.com/PrismJS/prism-themes/blob/master/themes/prism-material-light.css --- */
 /* with customizations */
