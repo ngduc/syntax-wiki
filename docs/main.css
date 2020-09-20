@@ -6,14 +6,15 @@ h1, h2, h3, h4, h5 {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+ul {
+}
 ul, li {
-  list-style: none;
+  list-style: square;
   margin: 10px 0;
-  padding: 0;
 }
 
 ul#mainList {
-  list-style: none;
+  list-style: none !important;
   margin: 10px 0;
   padding: 0;
   display: flex;
@@ -22,12 +23,14 @@ ul#mainList {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 ul#mainList li {
+  list-style: none !important;
   width: 25%;
   margin-right: 20px;
   border: 1px solid #ccc;
   border-radius: 5%;
   box-shadow: 3px 3px 3px #eee;
   margin: 2% 3%;
+  text-align: center;
 }
 ul#mainList li:hover {
   box-shadow: 1px 1px 1px #aaa;

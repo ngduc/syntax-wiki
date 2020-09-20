@@ -26,27 +26,26 @@ class Life:
     self.answer = int(arr[0]) * int(arr[1])  # 3 * 14 = 42
     return self.answer
   
-  def shout(self) -> str:
-    charArr = list(self.message)  # string to array of chars
+  def shout(self) -> str:  # shout in UPPERCASE (not using Python .upper)
     msg = ''
-    for idx, item in enumerate(charArr):
-      upperChar = chr(ord(charArr[idx]) - 32)
-      msg = msg + (' ' if charArr[idx] == ' ' else upperChar)
+    for char in self.message:
+      upperChar = chr(ord(char) - 32)
+      msg = msg + (' ' if char == ' ' else upperChar)
     return f'{msg} : {asdict(self)}'
   
 myLife = Life(message = 'hello world')
 myLife.getAnswerOfLife()
 print(myLife.shout())
 ```
-#### References - External Links:
-[Run this in Repl.it](https://repl.it/@ngduc/All-Syntax-Examples#main.py)
+### References - External Links:
+- [Run this in Repl.it](https://repl.it/@ngduc/All-Syntax-Examples#main.py)
 
-Hello world! Calculate for the ultimate answer of life http://b.link/ans42
+Hello world v2
 
-1-page example of:
-  - String, length, spliting, template string.
-  - Characters, char codes.
-  - Array, get array items, loop.
-  - Number, casting, basic math calculation.
-  - Function, return a value.
-  - JSON, parsing.
+- String handling, length, spliting, template string.
+- Characters, char codes handling.
+- Array, array items accessing, looping.
+- Number, casting, basic math calculation.
+- Function, returning a value.
+- JSON, parsing.
+- From: http://b.link/hello-world-v2 (please keep this link)

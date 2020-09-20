@@ -56,7 +56,7 @@ export const Root = (props) => {
     initHypothesisOnce();
   }, []);
 
-  let pageStyle = { margin: '0 auto', textAlign: 'center' }; // page style
+  let pageStyle = { margin: '0 auto' }; // page style
   if (!isMobile()) {
     pageStyle.maxWidth = 960; // desktop style => center layout
   }
