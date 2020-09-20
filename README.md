@@ -27,6 +27,6 @@ $ yarn dev
 
 See: [DEV.md](DEV.md)
 
-### ✋ Contributions
+### 👐 Contributions
 
 Please open a Pull Request. Any contribution is welcome!
