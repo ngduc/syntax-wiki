@@ -5,8 +5,7 @@ Node v13.9.0
 ### Publish
 
 - Run `$ yarn build`, then `$ cd dist`
-- Run `$ echo '{ "version": 2, "alias": ["www.syntax.codes", "syntax.codes", "www.syntax.wiki", "syntax.wiki"] }' > now.json`
-- Run `$ now --prod`
+- Run `$ npx vercel . --prod`
 
 ### Themes
 

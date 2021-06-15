@@ -7,7 +7,6 @@ TODO.md Task Board
 ### Todo
 
 - [ ] Fix: favicon  
-- [ ] Add: Python page  
 - [ ] Codesandbox: add footer github links  
 - [ ] Component: header  
 - [ ] Component: footer  
@@ -18,6 +17,7 @@ TODO.md Task Board
 
 ### Done ✓
 
+- [x] Add: Python page  
 - [x] Add: Edit link to start a Github PR  
 - [x] Syntax highlighting for other langs  
 - [x] Add: StencilJS page  
