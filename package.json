@@ -1,7 +1,7 @@
 {
   "name": "syntax-wiki",
   "description": "Source code for http://syntax.wiki",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "repository": {
     "type": "git",
