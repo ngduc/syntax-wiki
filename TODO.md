@@ -6,6 +6,7 @@ TODO.md Task Board
 
 ### Todo
 
+- [ ] Fix: favicon  
 - [ ] Add: Python page  
 - [ ] Codesandbox: add footer github links  
 - [ ] Component: header  

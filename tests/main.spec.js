@@ -12,6 +12,6 @@ describe('Google', () => {
 
   it('should navigate to /react', async () => {
     await page.click('#react a');
-    await expect(page).toHaveText('.token-line', `import * as React from 'react'`);
+    await expect(page).toHaveText('.token-line', `import React from`);
   });
 });
